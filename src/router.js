@@ -1,20 +1,22 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '@/views/Home.vue'
+import Clock from '@/views/Clock.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'Clock',
+    component: Clock,
+    children: [
+      // {
+      //   path: '/about',
+      //   name: 'about',
+      //   component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue')
+      // }
+    ]
   }
-  // {
-  //   path: '/about',
-  //   name: 'about',
-  //   component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue')
-  // }
 ]
 
 const router = new VueRouter({
